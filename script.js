@@ -36,3 +36,11 @@ localStorage.setItem("name", textName.value);
 localStorage.setItem("favBG", backColor.value);
 
 localStorage.setItem("favColor", textColor.value);
+
+let greeting = document.getElementById("greeting");
+
+greeting.innerText = localStorage.getItem("name");
+
+document.body.style.backgroundColor = localStorage.getItem("favBG");
+
+document.body.style.color = localStorage.getItem("favColor");
