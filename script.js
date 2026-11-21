@@ -28,5 +28,11 @@ form.addEventListener("submit", event => {
     console.log(backColor.value);
 
     console.log(textColor.value);
-    
+
 });
+
+localStorage.setItem("name", textName.value);
+
+localStorage.setItem("favBG", backColor.value);
+
+localStorage.setItem("favColor", textColor.value);
