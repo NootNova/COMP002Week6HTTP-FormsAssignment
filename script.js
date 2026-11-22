@@ -11,13 +11,17 @@
 // immediately apply them. Make sure you also notify the user somehow that the preferences
 // were saved.
 
-let textName = document.getElementById("name");
+const textName = document.getElementById("name");
 
-let backColor = document.getElementById("background-color");
+const backColor = document.getElementById("background-color");
 
-let textColor = document.getElementById("foreground-color");
+const textColor = document.getElementById("foreground-color");
 
-let form = document.querySelector("form");
+const form = document.querySelector("form");
+
+let greeting = document.getElementById("greeting");
+
+greeting.textContent = 
 
 form.addEventListener("submit", event => {
 
@@ -29,18 +33,26 @@ form.addEventListener("submit", event => {
 
     console.log(textColor.value);
 
+    localStorage.setItem("username", textName.value);
+
+    localStorage.setItem("favbg", backColor.value);
+
+    localStorage.setItem("favcolor", textColor.value);
+
 });
 
-localStorage.setItem("name", textName.value);
+const button = document.getElementById("button");
 
-localStorage.setItem("favBG", backColor.value);
+button.addEventListener("click", formChange);
 
-localStorage.setItem("favColor", textColor.value);
+function formChange() {
 
-let greeting = document.getElementById("greeting");
+    localStorage.getItem("username");
 
-greeting.innerText = localStorage.getItem("name");
+    greeting.textContent = "Username";
 
-document.body.style.backgroundColor = localStorage.getItem("favBG");
+};
 
-document.body.style.color = localStorage.getItem("favColor");
+//document.body.style.backgroundColor = localStorage.getItem("favBG");
+
+//document.body.style.color = localStorage.getItem("favColor");
