@@ -41,18 +41,6 @@ form.addEventListener("submit", event => {
 
 });
 
-const button = document.getElementById("button");
-
-button.addEventListener("click", formChange);
-
-function formChange() {
-
-    localStorage.getItem("username");
-
-    greeting.textContent = "Username";
-
-};
-
 //document.body.style.backgroundColor = localStorage.getItem("favBG");
 
 //document.body.style.color = localStorage.getItem("favColor");
